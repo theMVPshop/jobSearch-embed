@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import JobSearchSm from './JobSearchSm';
 import JobCard from './JobCard';
-import dentalImg from '../images/Dental-image.png';
+// import dentalImg from '../images/Dental-image.png';
 
 const JobPostings = ({jobSearch, setJobSearch}) => {
   const [jobList, setJobList] = useState([]);
@@ -40,7 +40,6 @@ const JobPostings = ({jobSearch, setJobSearch}) => {
         <div className='job-postings-grid'>
           {!resultsFound && 
               <div className='noresults-searching-container'>
-                <img src={dentalImg} alt='dentist illustration' className='noresults-searching-img'/> 
                 <h3>No job postings found...try again!</h3>
               </div> 
           } 
@@ -60,7 +59,6 @@ const JobPostings = ({jobSearch, setJobSearch}) => {
             })
             : resultsFound && 
                 <div className='noresults-searching-container'>
-                  <img src={dentalImg} alt='dentist illustration' className='noresults-searching-img'/>
                   <h3>Searching.....</h3> 
                 </div>
           }                     
