@@ -1,13 +1,6 @@
-@import url('./Navigation.css');
-@import url('./Landing.css');
-@import url('./SignIn.css');
 @import url('./SearchForm.css');
 @import url('./JobPostings.css');
 @import url('./JobCard.css');
-@import url('./NewsArticles.css');
-@import url('./FlashCards.css');
-@import url('./AddressBook.css');
-@import url('./ResumeBuilder.css');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap');
 
 :root {
