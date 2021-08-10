@@ -5,9 +5,6 @@ import { BsChevronUp, BsChevronDown, BsBookmark, BsBookmarkFill } from 'react-ic
 const JobCard = (props) => { 
   const [collapse, setCollapse] = useState(true);
 
-  // const [jobSaved, setJobSaved] = useState(false);
-  // const [isBookmarked, setIsBookmarked] = useState(false);
-
   let regExp = /&nbsp;/g;
   let description = props.description.replace(regExp,"");
   let regExp2 = /(<([^>]+)>)/ig;
@@ -17,48 +14,10 @@ const JobCard = (props) => {
     setCollapse(!collapse);
   }
 
-  // const toggleBookmark = () => {
-  //   setIsBookmarked(!isBookmarked);
-  // }
-
-  // const saveJobPosting = () => {
-  //   if (jobSaved) {
-  //     return
-  //   }
-
-  //   toggleBookmark();
-
-  //   let job = {
-  //     url: props.link,
-  //     user_id: "1"
-  //   }
-
-  //   fetch('/jobs/jobs', {
-  //     method: 'POST',
-  //     headers: {
-  //         'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(job)
-  //   })
-  //   .then(response => {
-  //     if (response.ok) {
-  //         setJobSaved(true)
-  //     } else {
-  //         alert('There was an error and job posting was not saved');
-  //     }
-  // })
-  // }
-
   return (
     <div className='job-card-container'>
       <Accordion>
         <Card>
-        {/* <div className='bookmark-header'>
-          {isBookmarked 
-            ? <BsBookmarkFill onClick={toggleBookmark} />
-            : <BsBookmark onClick={saveJobPosting} />
-          }
-        </div> */}
           <Accordion.Toggle 
             as={Card.Header} 
             eventKey='0' 

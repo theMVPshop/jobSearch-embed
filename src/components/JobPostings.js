@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import JobSearchSm from './JobSearchSm';
 import JobCard from './JobCard';
-// import NewsArticles from './NewsArticles';
-// import FlashCards from './FlashCards';
 import dentalImg from '../images/Dental-image.png';
 
 const JobPostings = ({jobSearch, setJobSearch}) => {
@@ -67,10 +65,6 @@ const JobPostings = ({jobSearch, setJobSearch}) => {
                 </div>
           }                     
         </div>
-        {/* <NewsArticles className='news-grid' /> */}
-        {/* <div className='flashcards-grid'> */}
-          {/* <FlashCards /> */}
-        {/* </div> */}
       </div>
     </div>
   )
