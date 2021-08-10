@@ -1,0 +1,64 @@
+.jobs-page-container {
+  width: 100%;
+  min-width: 300px;
+  max-width: 1000px;
+  margin: 10px auto;
+  padding: 0;
+}
+
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: 3fr;
+  grid-template-rows: 1fr;
+  /* grid-template-rows: 1fr 1fr; */
+  gap: 10px 10px;
+  margin: 10px 0;
+  height: 80vh;
+  width: 100%;
+  grid-template-areas: 
+  "jobs flashcards";
+  /* grid-template-areas: 
+  "jobs news"
+  "jobs flashcards"; */
+}
+
+.job-postings-grid {
+  background-color: var(--secondary-green-opacity);
+  padding: 5px;
+  overflow: scroll;
+  grid-area: jobs;
+}
+
+/* .news-grid {
+  grid-area: news;
+} */
+
+.flashcards-grid {
+  grid-area: flashcards;
+}
+
+.noresults-searching-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.noresults-searching-container > h3 {
+  text-align: center;
+} 
+
+.noresults-searching-img {
+  width: 80%;
+}
+
+@media (max-width: 575px) {
+  .grid-container {
+    grid-template-columns: 3fr;
+    grid-template-rows: 3fr;  
+    grid-template-areas: 
+    "jobs";
+  }
+  .flashcards-grid, .news-grid {
+    display: none;
+  }
+}
