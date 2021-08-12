@@ -7,6 +7,13 @@ import JobCard from './JobCard';
 const JobPostings = ({jobSearch, setJobSearch}) => {
   const [jobList, setJobList] = useState([]);
   const [resultsFound, setResultsFound] = useState(true);
+  const queryString = window.location.search
+  console.log(queryString);
+  const urlParams = new URLSearchParams(queryString);
+  const id = urlParams.get('id')
+  console.log(id);
+
+
 
   useEffect(() => {
     const session = sessionStorage.getItem('jobList')
@@ -17,7 +24,8 @@ const JobPostings = ({jobSearch, setJobSearch}) => {
 
     axios.post('https://jooble.org/api/2f68c697-0b9e-420b-ac07-3522403e50ae', {
       keywords: jobSearch.position,
-      location: jobSearch.location
+      // location: jobSearch.location
+      location: id
     })
       .then(res => res.data)
       .then(data => {
@@ -50,7 +58,7 @@ const JobPostings = ({jobSearch, setJobSearch}) => {
                 <JobCard 
                   key={job.id}
                   title={job.title}
-                  location={job.location}
+                  location={job.location} 
                   company={job.company}
                   description={job.snippet}
                   link={job.link}
