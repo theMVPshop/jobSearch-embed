@@ -10,8 +10,10 @@ const JobPostings = ({jobSearch, setJobSearch}) => {
   const queryString = window.location.search
   console.log(queryString);
   const urlParams = new URLSearchParams(queryString);
-  const id = urlParams.get('id')
-  console.log(id);
+  const zip = urlParams.get('zip')
+  const backgroundColor = urlParams.get('backgroundColor')
+  const jobTitle = urlParams.get('jobTitle')
+  console.log(zip, backgroundColor);
 
 
 
@@ -23,9 +25,9 @@ const JobPostings = ({jobSearch, setJobSearch}) => {
     }
 
     axios.post('https://jooble.org/api/2f68c697-0b9e-420b-ac07-3522403e50ae', {
-      keywords: jobSearch.position,
+      keywords: jobTitle,
       // location: jobSearch.location
-      location: id
+      location: zip
     })
       .then(res => res.data)
       .then(data => {
@@ -42,10 +44,10 @@ const JobPostings = ({jobSearch, setJobSearch}) => {
   }, [jobSearch]);
   
   return (
-    <div className='jobs-page-container'>
+    <div className='jobs-page-container' style={{backgroundColor}}>
       <JobSearchSm setJobSearch={setJobSearch} />
-      <div className='grid-container'>
-        <div className='job-postings-grid'>
+      <div className='grid-container' style={{backgroundColor}}>
+        <div className='job-postings-grid' style={{backgroundColor}}>
           {!resultsFound && 
               <div className='noresults-searching-container'>
                 <h3>No job postings found...try again!</h3>
@@ -75,5 +77,4 @@ const JobPostings = ({jobSearch, setJobSearch}) => {
     </div>
   )
 }
-
 export default JobPostings;
