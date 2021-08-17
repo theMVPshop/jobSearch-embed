@@ -11,6 +11,7 @@
   --primary-text-color: #f0f0f0;
   --secondary-text-color: #323232;
   --background: #f6feff;
+  --font: 'Raleway', sans-serif;
 }
 #root {
   height: 100vh;
@@ -24,7 +25,7 @@
   /* font-family: "Roboto", san-serf; */
   font-weight: 400;
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
+  font-family: var(--font);
 }
 
 body {

@@ -27,6 +27,8 @@ const JobPostings = ({jobSearch, setJobSearch}) => {
   getComputedStyle(document.documentElement).getPropertyValue('--secondary-green');
   document.documentElement.style.setProperty('--secondary-green', searchButtonColor);
 
+  getComputedStyle(document.documentElement).getPropertyValue('--font');
+  document.documentElement.style.setProperty('--font', font);
 
 
 
