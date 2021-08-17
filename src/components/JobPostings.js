@@ -13,7 +13,21 @@ const JobPostings = ({jobSearch, setJobSearch}) => {
   const zip = urlParams.get('zip')
   const backgroundColor = urlParams.get('backgroundColor')
   const jobTitle = urlParams.get('jobTitle')
+  const searchBoxColor = urlParams.get('searchBoxColor')
+  const searchButtonColor = urlParams.get('searchButtonColor')
+  const font = urlParams.get('font')
   console.log(zip, backgroundColor);
+
+  getComputedStyle(document.documentElement).getPropertyValue('--background');
+  document.documentElement.style.setProperty('--background', backgroundColor);
+
+  getComputedStyle(document.documentElement).getPropertyValue('--primary-green');
+  document.documentElement.style.setProperty('--primary-green', searchBoxColor);
+
+  getComputedStyle(document.documentElement).getPropertyValue('--secondary-green');
+  document.documentElement.style.setProperty('--secondary-green', searchButtonColor);
+
+
 
 
 
@@ -44,10 +58,10 @@ const JobPostings = ({jobSearch, setJobSearch}) => {
   }, [jobSearch]);
   
   return (
-    <div className='jobs-page-container' style={{backgroundColor}}>
+    <div className='jobs-page-container'>
       <JobSearchSm setJobSearch={setJobSearch} />
-      <div className='grid-container' style={{backgroundColor}}>
-        <div className='job-postings-grid' style={{backgroundColor}}>
+      <div className='grid-container'>
+        <div className='job-postings-grid'>
           {!resultsFound && 
               <div className='noresults-searching-container'>
                 <h3>No job postings found...try again!</h3>
